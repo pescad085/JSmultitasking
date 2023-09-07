@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <h1 id="put">Put SOmething here</h1>
+
+    <script>
+
+
+         let put = document.getElementById("put");
+                        function delay(miliseconds) {
+                         return new Promise(resolve => {
+                          setTimeout(resolve, miliseconds);
+                         })
+                        }
+                        async function changeText () {
+                          
+                           await delay(5000);
+                           put.innerHTML = "text";
+                           await delay(5000);
+                           put.innerHTML = "Changed after 10 secs"
+                          
+                        }
+                        changeText();
+           
+         
+    </script>
+</body>
+</html>
